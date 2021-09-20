@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         recycler = findViewById(R.id.poiList)
         setupRecyclerView()
         generatePOI()
-
     }
 
     private fun setupRecyclerView() {
