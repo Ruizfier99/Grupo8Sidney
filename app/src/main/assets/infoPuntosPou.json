@@ -1,0 +1,42 @@
+[
+  {
+
+    "nombrePoi": "Opera de Sydney",
+    "nombreCategoria": "Arte y Ocio",
+    "imagen" : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Sydney_Opera_House_Sails.jpg/250px-Sydney_Opera_House_Sails.jpg",
+    "descripcion": "Uno de los grandes iconos del mundo, la Ópera de Sydney, es un patrimonio de la humanidad y la atracción estrella que brilla en el puerto",
+    "puntuacion": "5 Estrellas"
+  },
+  {
+    "nombrePoi": "Puente del Puerto de Sydney",
+    "nombreCategoria": "Arquitectura",
+    "imagen" : "https://javitour.com/wp-content/uploads/2016/05/Atracciones-Tur%C3%ADsticas-de-Sydney-2_opt.jpg",
+    "descripcion": "El puente del puerto de Sydney o “Colgador“, como la llaman los locales, fue la más famosa de las Atracciones Turísticas de Sydney  antes de la construcción de la Opera.",
+    "puntuacion": "4 Estrellas"
+  },
+  {
+    "nombrePoi": "Las Rocas",
+    "nombreCategoria": "Arte y Ocio",
+    "imagen" : "https://javitour.com/wp-content/uploads/2016/05/Atracciones-Tur%C3%ADsticas-de-Sydney-3_opt.jpg",
+    "descripcion": "La zona histórica de Rocks fue el hogar de los aborígenes Gadigal y más tarde se convirtió en el primer sitio de la colonización europea del país.",
+    "puntuacion": "5 Estrellas"
+
+  },
+  {
+    "nombrePoi": "Circular Quay",
+    "nombreCategoria": "Arquitectura",
+    "imagen" : "https://javitour.com/wp-content/uploads/2016/05/Atracciones-Tur%C3%ADsticas-de-Sydney-4_opt.jpg",
+    "descripcion": "Construido por los convictos en Sydney Cove, la animada Circular Quay es ahora el hogar de la terminal principal de ferrys de la ciudad.",
+    "puntuacion": "5 Estrellas"
+
+  },
+  {
+    "nombrePoi": "Puerto Darling",
+    "nombreCategoria": "Arquitectura",
+    "imagen" : "https://javitour.com/wp-content/uploads/2016/05/Atracciones-Tur%C3%ADsticas-de-Sydney-5_opt.jpg",
+    "descripcion": "Darling Harbour es un barrio marítimo peatonal lleno de tiendas, restaurantes, museos, exposiciones y lugares de ocio.",
+    "puntuacion": "5 Estrellas"
+
+  }
+
+]
