@@ -1,0 +1,29 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Configuraciones"
+        app:icon="@drawable/ic_baseline_settings_24">
+
+        <EditTextPreference
+            app:summary="Realice las configuraciones deseadas para el funcionamiento de la aplicación"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Notificaciones"
+        app:icon="@drawable/ic_baseline_notifications_24">
+        <CheckBoxPreference
+            app:title="Autorización Notificaciones "
+            app:summary="Marque si desea autorizar la aparición de Notificaciones para esta Aplicación"
+            app:key="checkboxNot"
+            app:defaultValue="false"
+            />
+        <CheckBoxPreference
+            app:title="Sonido Notificaciones "
+            app:summary="Marque si desea que las notificaciones tengan sonido"
+            app:key="checkboxSonido"
+            app:defaultValue="false"
+            />
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
