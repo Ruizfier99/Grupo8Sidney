@@ -1,15 +1,10 @@
 package com.example.grupo8sidney
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import org.json.JSONArray
-import org.json.JSONException
-import java.io.IOException
+import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,11 +13,6 @@ class MainActivity : AppCompatActivity() {
         // setupActionBarWithNavController(findNavController(R.id.main_fragment))
 
     }
-
-
-
-
-
 
 
 }

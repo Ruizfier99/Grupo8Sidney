@@ -1,5 +1,7 @@
 package com.example.grupo8sidney
 
+import android.content.ContentValues.TAG
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,10 @@ import com.example.grupo8sidney.databinding.FragmentHomeBinding
 import org.json.JSONArray
 import org.json.JSONException
 import java.io.IOException
+import android.util.Log
+import android.widget.ImageView
+import android.widget.TextView
+import com.squareup.picasso.Picasso
 
 
 class HomeFragment : Fragment() {
@@ -34,9 +40,12 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        binding.fabSettings.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_settingsFragment)
+       binding.fabSettings.setOnClickListener {
+           findNavController().navigate(R.id.action_homeFragment_to_settingsFragment)
         }
+       //binding.rvUbicacionesSidney.setOnClickListener{
+         //   findNavController().navigate(R.id.action_homeFragment_to_fragmentVista)
+        //}
 
 
     }
@@ -99,9 +108,33 @@ class HomeFragment : Fragment() {
 
         val recycler = binding.rvUbicacionesSidney
         recycler.layoutManager = LinearLayoutManager(activity)
-        val adapter = UbicacionAdapter(puntosInteres)
+        val adapter = UbicacionAdapter(puntosInteres){
+            ubicacionPOI ->  contactOnClick(ubicacionPOI)
+        }
+
 
         recycler.adapter = adapter
+
+    }
+    private fun contactOnClick(ubicacionPoi:UbicacionPOI){
+         Log.d(TAG,"Click on: $ubicacionPoi")
+        //val bundle= Bundle()
+        //val arrays: String = ubicacionPoi.descripcion
+        //bundle.putString("ubicacionPoi", arrays)
+        //val fragment = FragmentVista()
+        //fragment.arguments =bundle
+        //fragmentManager?.beginTransaction()?.replace(R.id.,fragment)?.commit()
+
+        findNavController().navigate(R.id.action_homeFragment_to_fragmentVista)
+
+
+
+
+
+
+
+
+
 
     }
 

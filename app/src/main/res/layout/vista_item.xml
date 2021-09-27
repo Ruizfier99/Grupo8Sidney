@@ -17,7 +17,7 @@
         app:srcCompat="@mipmap/pieltigre" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/nombrePoi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/descripcionUbi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -43,24 +43,22 @@
         tools:layout_editor_absoluteX="21dp" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imagenUbica"
         android:layout_width="221dp"
         android:layout_height="203dp"
-        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@mipmap/jirafas" />
+        app:srcCompat="@mipmap/jirafas"
+        tools:layout_editor_absoluteY="74dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:text="Ubicación: Mosman, Sídney, Nueva Gales del Sur, Australia. \nDirección: Bradleys Head Road. \nClasificación: Zoológico.\nTemperatura: 28°C. \nHorarios: todos los días del año de 09:30 hs – 17:00 hs, Navidad inclusive."
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:layout_width="372dp"
+        android:layout_height="103dp"
+        android:text="ción: Zoológico.\nTemperatura: 28°C. \nHorarios: todos los días del año de 09:30 hs – 17:00 hs, Navidad inclusive."
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="413dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,13 +20,20 @@ class FragmentVista : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentVistaBinding.inflate(inflater,container, false)
+        //val args= this.arguments
+       // val inputData= args?.get("ubicacionPoi")
+
+        //binding.visNombrePoi.text= arrayubi[1].toString()
+        //binding.visCategoria.text=arrayubi[3].toString()
+        //binding.visdescripcionUbi.text=inputData.toString()
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         //binding."boton".setOnClickListener{
-            findNavController().navigate(R.id.action_homeFragment_to_fragmentVista)
+            //findNavController().navigate(R.id.action_fragmentVista_to_homeFragment)
         //}
 
 
