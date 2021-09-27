@@ -21,11 +21,11 @@ class FragmentVista : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentVistaBinding.inflate(inflater,container, false)
         //val args= this.arguments
-       // val inputData= args?.get("ubicacionPoi")
+        //val inputData= args?.get("ubicacionPoi")
 
         //binding.visNombrePoi.text= arrayubi[1].toString()
         //binding.visCategoria.text=arrayubi[3].toString()
-        //binding.visdescripcionUbi.text=inputData.toString()
+        //binding.textView3.text=inputData.toString()
 
         return binding.root
     }

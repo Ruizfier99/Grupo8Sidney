@@ -123,7 +123,7 @@ class HomeFragment : Fragment() {
         //bundle.putString("ubicacionPoi", arrays)
         //val fragment = FragmentVista()
         //fragment.arguments =bundle
-        //fragmentManager?.beginTransaction()?.replace(R.id.,fragment)?.commit()
+       // fragmentManager?.beginTransaction()?.replace(R.id.textView3,fragment)?.commit()
 
         findNavController().navigate(R.id.action_homeFragment_to_fragmentVista)
 
