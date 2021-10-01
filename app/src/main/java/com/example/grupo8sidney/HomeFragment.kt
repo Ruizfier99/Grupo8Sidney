@@ -16,7 +16,9 @@ import java.io.IOException
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.activityViewModels
 import com.squareup.picasso.Picasso
+import java.nio.channels.Selector
 
 
 class HomeFragment : Fragment() {
@@ -25,14 +27,28 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
 
+    private val model: SharedViewModel by activityViewModels()
+
+    var contador = 1
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-         initRecycler()
-        generateUbicaciones()
+
+        initRecycler()
+        while (contador < 2) {
+
+
+            generateUbicaciones()
+            contador += 1
+
+        }
+
+
+
+
 
 
         return binding.root
@@ -40,11 +56,19 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-       binding.fabSettings.setOnClickListener {
-           findNavController().navigate(R.id.action_homeFragment_to_settingsFragment)
+
+        super.onViewCreated(view, savedInstanceState)
+
+        //setOnClickListener{ ubicacionPoi ->
+        //  model.select(ubicacionPoi)
+        //}
+        binding.fabSettings.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_settingsFragment)
         }
-       //binding.rvUbicacionesSidney.setOnClickListener{
-         //   findNavController().navigate(R.id.action_homeFragment_to_fragmentVista)
+
+
+        //binding.rvUbicacionesSidney.setOnClickListener{
+        //   findNavController().navigate(R.id.action_homeFragment_to_fragmentVista)
         //}
 
 
@@ -108,32 +132,26 @@ class HomeFragment : Fragment() {
 
         val recycler = binding.rvUbicacionesSidney
         recycler.layoutManager = LinearLayoutManager(activity)
-        val adapter = UbicacionAdapter(puntosInteres){
-            ubicacionPOI ->  contactOnClick(ubicacionPOI)
+        val adapter = UbicacionAdapter(puntosInteres) { ubicacionPOI ->
+            contactOnClick(ubicacionPOI)
         }
 
 
         recycler.adapter = adapter
 
     }
-    private fun contactOnClick(ubicacionPoi:UbicacionPOI){
-         Log.d(TAG,"Click on: $ubicacionPoi")
+
+    private fun contactOnClick(ubicacionPoi: UbicacionPOI) {
+        Log.d(TAG, "Click on: $ubicacionPoi")
         //val bundle= Bundle()
         //val arrays: String = ubicacionPoi.descripcion
         //bundle.putString("ubicacionPoi", arrays)
         //val fragment = FragmentVista()
         //fragment.arguments =bundle
-       // fragmentManager?.beginTransaction()?.replace(R.id.textView3,fragment)?.commit()
+        // fragmentManager?.beginTransaction()?.replace(R.id.textView3,fragment)?.commit()
+        model.select(ubicacionPoi)
 
         findNavController().navigate(R.id.action_homeFragment_to_fragmentVista)
-
-
-
-
-
-
-
-
 
 
     }

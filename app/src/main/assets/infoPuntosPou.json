@@ -3,14 +3,14 @@
 
     "nombrePoi": "Opera de Sydney",
     "nombreCategoria": "Arte y Ocio",
-    "imagen" : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Sydney_Opera_House_Sails.jpg/250px-Sydney_Opera_House_Sails.jpg",
+    "imagen" : "https://media-cdn.tripadvisor.com/media/photo-s/17/3b/95/61/photo2jpg.jpg",
     "descripcion": "Uno de los grandes iconos del mundo, la Ópera de Sydney, es un patrimonio de la humanidad y la atracción estrella que brilla en el puerto",
     "puntuacion": "5 Estrellas"
   },
   {
     "nombrePoi": "Puente del Puerto de Sydney",
     "nombreCategoria": "Arquitectura",
-    "imagen" : "https://javitour.com/wp-content/uploads/2016/05/Atracciones-Tur%C3%ADsticas-de-Sydney-2_opt.jpg",
+    "imagen" : "https://turismo.org/wp-content/uploads/2017/08/Puente-del-puerto-de-Sidney-760x500.jpg",
     "descripcion": "El puente del puerto de Sydney o “Colgador“, como la llaman los locales, fue la más famosa de las Atracciones Turísticas de Sydney  antes de la construcción de la Opera.",
     "puntuacion": "4 Estrellas"
   },
@@ -25,7 +25,7 @@
   {
     "nombrePoi": "Circular Quay",
     "nombreCategoria": "Arquitectura",
-    "imagen" : "https://javitour.com/wp-content/uploads/2016/05/Atracciones-Tur%C3%ADsticas-de-Sydney-4_opt.jpg",
+    "imagen" : "https://c8.alamy.com/compes/2g88p5d/circular-quay-un-puerto-en-sydney-nueva-gales-del-sur-australia-2g88p5d.jpg",
     "descripcion": "Construido por los convictos en Sydney Cove, la animada Circular Quay es ahora el hogar de la terminal principal de ferrys de la ciudad.",
     "puntuacion": "5 Estrellas"
 

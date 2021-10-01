@@ -6,7 +6,7 @@
     <ImageView
         android:id="@+id/ImagenUbi"
         android:layout_width="150dp"
-        android:layout_height="150dp"/>
+        android:layout_height="match_parent"/>
     <LinearLayout
         android:id="@+id/tvLinearLay"
         android:layout_width="match_parent"
@@ -17,21 +17,27 @@
             android:id="@+id/tvNombrePoi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             />
         <TextView
             android:id="@+id/descripcionUbicacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:textSize="13dp"
+
             />
         <TextView
             android:id="@+id/nombreCategoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="italic"
             />
         <TextView
             android:id="@+id/puntuacionUbicacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="italic"
             />
     </LinearLayout>
 
