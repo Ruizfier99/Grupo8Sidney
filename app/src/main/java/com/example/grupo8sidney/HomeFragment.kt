@@ -25,8 +25,6 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
-
     private val model: SharedViewModel by activityViewModels()
 
     var contador = 1
@@ -39,23 +37,13 @@ class HomeFragment : Fragment() {
 
         initRecycler()
         while (contador < 2) {
-
-
             generateUbicaciones()
             contador += 1
-
         }
-
-
-
-
-
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
 
         super.onViewCreated(view, savedInstanceState)
 
@@ -66,12 +54,9 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_settingsFragment)
         }
 
-
         //binding.rvUbicacionesSidney.setOnClickListener{
         //   findNavController().navigate(R.id.action_homeFragment_to_fragmentVista)
         //}
-
-
     }
 
     val puntosInteres: ArrayList<UbicacionPOI> = arrayListOf(
@@ -110,35 +95,27 @@ class HomeFragment : Fragment() {
 
     private fun readPOIJsonFile(): String? {
         var poiString: String? = null
-
         try {
             val inputStream = requireActivity().assets.open("infoPuntosPou.json")
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
             inputStream.close()
-
             poiString = String(buffer)
         } catch (e: IOException) {
             e.printStackTrace()
         }
-
-
         return poiString
     }
 
 
     fun initRecycler() {
-
         val recycler = binding.rvUbicacionesSidney
         recycler.layoutManager = LinearLayoutManager(activity)
         val adapter = UbicacionAdapter(puntosInteres) { ubicacionPOI ->
             contactOnClick(ubicacionPOI)
         }
-
-
         recycler.adapter = adapter
-
     }
 
     private fun contactOnClick(ubicacionPoi: UbicacionPOI) {
@@ -152,9 +129,5 @@ class HomeFragment : Fragment() {
         model.select(ubicacionPoi)
 
         findNavController().navigate(R.id.action_homeFragment_to_fragmentVista)
-
-
     }
-
-
 }

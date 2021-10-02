@@ -36,12 +36,10 @@ class UbicacionAdapter(
                     onClick(it)
                 }
             }
-
         }
 
-
         fun render(ubicacionPOI: UbicacionPOI) {
-            currentUbicacion=ubicacionPOI
+            currentUbicacion = ubicacionPOI
 
             view.findViewById<TextView>(R.id.tvNombrePoi).text = ubicacionPOI.nombrePoi
             view.findViewById<TextView>(R.id.nombreCategoria).text = ubicacionPOI.nombreCategoria
@@ -51,8 +49,5 @@ class UbicacionAdapter(
             Picasso.get().load(ubicacionPOI.imagen)
                 .into(view.findViewById<ImageView>(R.id.ImagenUbi))
         }
-
     }
-
-
 }

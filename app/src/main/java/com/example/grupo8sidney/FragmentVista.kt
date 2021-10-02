@@ -49,10 +49,5 @@ class FragmentVista : Fragment() {
             Picasso.get().load(ubicacionPOI.imagen)
                 .into(view.findViewById<ImageView>(R.id.imagenPoi))
         })
-
-
-
     }
-
-
 }
