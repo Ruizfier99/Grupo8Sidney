@@ -99,31 +99,31 @@ class HomeFragment : Fragment() {
         //
     )
 
-    private fun generateUbicaciones() {
-       val ubicacionesString = readPOIJsonFile()
+    //private fun generateUbicaciones() {
+      // val ubicacionesString = readPOIJsonFile()
 
-        try {
-            val ubicacionesJson = JSONArray(ubicacionesString)
+        //try {
+          //  val ubicacionesJson = JSONArray(ubicacionesString)
 
-            for (i in 0 until ubicacionesJson.length()) {
-                val ubicacionJson = ubicacionesJson.getJSONObject(i)
-                val ubicacion = UbicacionPOI(
-                    ubicacionJson.getString("nombrePoi"),
-                    ubicacionJson.getString("nombreCategoria"),
-                    ubicacionJson.getString("imagen"),
-                    ubicacionJson.getString("descripcion"),
-                    ubicacionJson.getString("puntuacion")
-                )
-                puntosInteres.add(ubicacion)
+            //for (i in 0 until ubicacionesJson.length()) {
+              //  val ubicacionJson = ubicacionesJson.getJSONObject(i)
+                //val ubicacion = UbicacionPOI(
+                  //  ubicacionJson.getString("nombrePoi"),
+                    //ubicacionJson.getString("nombreCategoria"),
+                    //ubicacionJson.getString("imagen"),
+                    //ubicacionJson.getString("descripcion"),
+                    //ubicacionJson.getString("puntuacion")
+                //)
+                //puntosInteres.add(ubicacion)
 
-            }
-            print(puntosInteres)
+            //}
+            //print(puntosInteres)
 
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
+       // } catch (e: JSONException) {
+         //   e.printStackTrace()
+        //}
 
-    }
+    //}
 
     private fun readPOIJsonFile(): String? {
         var poiString: String? = null

@@ -12,5 +12,10 @@ data class UbicacionPOI(
     @SerializedName("descripcion")
     val descripcion: String,
     @SerializedName("puntuacion")
-    val puntuacion: String
+    val puntuacion: String,
+    @SerializedName("longitud")
+    val longitud: String,
+    @SerializedName("latitud")
+    val latitud: String
+
                         )
