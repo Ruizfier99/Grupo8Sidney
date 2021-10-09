@@ -1,7 +1,5 @@
 package com.example.grupo8sidney
-
 import android.content.ContentValues.TAG
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,8 +15,11 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.squareup.picasso.Picasso
 import java.nio.channels.Selector
+
 
 
 class HomeFragment : Fragment() {
@@ -28,6 +29,9 @@ class HomeFragment : Fragment() {
 
 
     private val model: SharedViewModel by activityViewModels()
+    private lateinit var  viewModel: viewModelPoi
+    private lateinit var postAdapter: UbicacionAdapter
+
 
     var contador = 1
     override fun onCreateView(
@@ -36,20 +40,13 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-
-        initRecycler()
-        while (contador < 2) {
+       // while (contador < 2) {
 
 
-            generateUbicaciones()
-            contador += 1
-
-        }
-
-
-
-
-
+            //generateUbicaciones()
+           //contador += 1
+        //}
+        initRecycler(puntosInteres)
 
         return binding.root
     }
@@ -58,13 +55,32 @@ class HomeFragment : Fragment() {
 
 
         super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(this).get(viewModelPoi::class.java)
+        viewModel.getPois().observe(viewLifecycleOwner, Observer {ubicacionesPoi->
+            for(i in ubicacionesPoi){
+                puntosInteres.add(i)
+
+            }
+
+        })
+        puntosInteres.clear()
+
 
         //setOnClickListener{ ubicacionPoi ->
         //  model.select(ubicacionPoi)
         //}
+
+        binding.fabActualizar.setOnClickListener{
+            initRecycler(puntosInteres)
+        }
         binding.fabSettings.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_settingsFragment)
+
         }
+
+
+
+
 
 
         //binding.rvUbicacionesSidney.setOnClickListener{
@@ -84,7 +100,7 @@ class HomeFragment : Fragment() {
     )
 
     private fun generateUbicaciones() {
-        val ubicacionesString = readPOIJsonFile()
+       val ubicacionesString = readPOIJsonFile()
 
         try {
             val ubicacionesJson = JSONArray(ubicacionesString)
@@ -106,6 +122,7 @@ class HomeFragment : Fragment() {
         } catch (e: JSONException) {
             e.printStackTrace()
         }
+
     }
 
     private fun readPOIJsonFile(): String? {
@@ -128,16 +145,19 @@ class HomeFragment : Fragment() {
     }
 
 
-    fun initRecycler() {
+    fun initRecycler(puntoPoi:ArrayList<UbicacionPOI>) {
 
         val recycler = binding.rvUbicacionesSidney
         recycler.layoutManager = LinearLayoutManager(activity)
-        val adapter = UbicacionAdapter(puntosInteres) { ubicacionPOI ->
+
+        val adapter = UbicacionAdapter(puntoPoi) { ubicacionPOI ->
             contactOnClick(ubicacionPOI)
         }
 
 
         recycler.adapter = adapter
+
+
 
     }
 
@@ -155,6 +175,8 @@ class HomeFragment : Fragment() {
 
 
     }
+
+
 
 
 }

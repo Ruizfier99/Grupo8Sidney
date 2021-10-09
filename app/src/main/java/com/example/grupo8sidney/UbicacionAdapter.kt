@@ -53,6 +53,11 @@ class UbicacionAdapter(
         }
 
     }
+    fun updatePoiList(ubicacionPoi: List<UbicacionPOI>?) {
+        this.ubicacionPOI.clear()
+        ubicacionPoi?.let { this.ubicacionPOI.addAll(it) }
+        notifyDataSetChanged()
+    }
 
 
 }
