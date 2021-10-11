@@ -12,8 +12,4 @@ class SharedViewModel : ViewModel() {
     fun select(ubicacionPoi:UbicacionPOI){
         selected.value = ubicacionPoi
     }
-
-
-
-
 }
