@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.grupo8sidney.databinding.FragmentHomeBinding
 import java.io.IOException
 
-
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
@@ -30,12 +29,6 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        // while (contador < 2) {
-
-
-        //generateUbicaciones()
-        //contador += 1
-        //}
         initRecycler(puntosInteres)
 
         return binding.root
@@ -43,81 +36,24 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         viewModel = ViewModelProvider(this).get(viewModelPoi::class.java)
         viewModel.getPois().observe(viewLifecycleOwner, Observer { ubicacionesPoi ->
             for (i in ubicacionesPoi) {
                 puntosInteres.add(i)
-
             }
-
         })
         puntosInteres.clear()
-
-
-        //setOnClickListener{ ubicacionPoi ->
-        //  model.select(ubicacionPoi)
-        //}
 
         binding.fabActualizar.setOnClickListener {
             initRecycler(puntosInteres)
         }
+
         binding.fabSettings.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_settingsFragment)
-
         }
-        //binding.rvUbicacionesSidney.setOnClickListener{
-        //   findNavController().navigate(R.id.action_homeFragment_to_fragmentVista)
-        //}
     }
 
     val puntosInteres: ArrayList<UbicacionPOI> = arrayListOf()
-
-    //private fun generateUbicaciones() {
-    // val ubicacionesString = readPOIJsonFile()
-
-    //try {
-    //  val ubicacionesJson = JSONArray(ubicacionesString)
-
-    //for (i in 0 until ubicacionesJson.length()) {
-    //  val ubicacionJson = ubicacionesJson.getJSONObject(i)
-    //val ubicacion = UbicacionPOI(
-    //  ubicacionJson.getString("nombrePoi"),
-    //ubicacionJson.getString("nombreCategoria"),
-    //ubicacionJson.getString("imagen"),
-    //ubicacionJson.getString("descripcion"),
-    //ubicacionJson.getString("puntuacion")
-    //)
-    //puntosInteres.add(ubicacion)
-
-    //}
-    //print(puntosInteres)
-
-    // } catch (e: JSONException) {
-    //   e.printStackTrace()
-    //}
-
-    //}
-/*
-    private fun readPOIJsonFile(): String? {
-        var poiString: String? = null
-
-        try {
-            val inputStream = requireActivity().assets.open("infoPuntosPou.json")
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.read(buffer)
-            inputStream.close()
-
-            poiString = String(buffer)
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-
-
-        return poiString
-    }
-*/
 
     fun initRecycler(puntoPoi: ArrayList<UbicacionPOI>) {
         val recycler = binding.rvUbicacionesSidney
@@ -130,12 +66,6 @@ class HomeFragment : Fragment() {
 
     private fun contactOnClick(ubicacionPoi: UbicacionPOI) {
         Log.d(TAG, "Click on: $ubicacionPoi")
-        //val bundle= Bundle()
-        //val arrays: String = ubicacionPoi.descripcion
-        //bundle.putString("ubicacionPoi", arrays)
-        //val fragment = FragmentVista()
-        //fragment.arguments =bundle
-        // fragmentManager?.beginTransaction()?.replace(R.id.textView3,fragment)?.commit()
         model.select(ubicacionPoi)
 
         findNavController().navigate(R.id.action_homeFragment_to_fragmentVista)
