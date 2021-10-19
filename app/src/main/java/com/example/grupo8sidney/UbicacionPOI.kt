@@ -17,5 +17,4 @@ data class UbicacionPOI(
     val longitud: String,
     @SerializedName("latitud")
     val latitud: String
-
-                        )
+    )

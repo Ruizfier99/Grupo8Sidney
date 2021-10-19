@@ -8,6 +8,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvUbicacionesSidney"
         android:layout_width="match_parent"
+        android:layout_margin="10dp"
         android:layout_height="match_parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -16,10 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_margin="24dp"
         android:src="@drawable/ic_baseline_settings_24"
         android:tint="@android:color/white" />
 
@@ -35,6 +33,5 @@
         android:layout_marginBottom="25dp"
         android:src="@drawable/ic_baseline_import_export_24"
         android:tint="@android:color/white" />
-
 
 </RelativeLayout>

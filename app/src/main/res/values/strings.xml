@@ -17,4 +17,8 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="BottonMaps">Ubicación GoogleMaps</string>
+    <string name="titleLabel">Title of the POI</string>
+    <string name="descriptionLabel">A very long and quite description about the POI that the user is watching in the moment.</string>
+    <string name="categoryLabel">Category</string>
+    <string name="punctuationLabel">Punctuation</string>
 </resources>

@@ -10,8 +10,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
-import com.example.grupo8sidney.databinding.FragmentHomeBinding
 import com.example.grupo8sidney.databinding.FragmentVistaBinding
 import com.squareup.picasso.Picasso
 
@@ -46,7 +44,7 @@ class FragmentVista : Fragment() {
         })
 
         binding.botonGoogle.setOnClickListener {
-            val gmmIntentUri = Uri.parse("geo:" + latitudPoi + "," + longitudPoi)
+            val gmmIntentUri = Uri.parse("geo:0,0?q=" + latitudPoi + ", " + longitudPoi+"(punto)")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.setPackage("com.google.android.apps.maps")
             startActivity(mapIntent)

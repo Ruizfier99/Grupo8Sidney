@@ -10,30 +10,30 @@
     <TextView
         android:id="@+id/tituloPoi"
         android:layout_width="0dp"
-        android:layout_height="52dp"
+        android:layout_height="40dp"
         android:gravity="center"
-        android:text="¡Zoo Taronga!"
         android:textColor="@color/black"
-        android:textSize="15pt"
+        android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintVertical_bias="0.1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintVertical_bias="0.1"
+        tools:text="@string/titleLabel" />
 
     <TextView
         android:id="@+id/DescripcionUbica"
         android:layout_width="471dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="El Zoo Taronga de Sydney es uno de los zoológicos más grandes de Australia, destacando por su compromiso con la conservación de la vida silvestre, por lo que alberga especies en peligro de extinción e imparte planes de educación ambiental."
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#455A64"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imagenPoi"
-        app:layout_constraintTop_toBottomOf="@+id/tituloPoi" />
+        app:layout_constraintTop_toBottomOf="@+id/tituloPoi"
+        tools:text="@string/descriptionLabel" />
 
     <ImageView
         android:id="@+id/imagenPoi"
@@ -42,27 +42,34 @@
         android:layout_marginStart="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloPoi"
-        app:layout_constraintVertical_bias="0.283"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/jirafas" />
 
     <TextView
         android:id="@+id/nombreCat"
         android:layout_width="404dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:textColor="#455A64"
+        android:textStyle="italic"
         app:layout_constraintStart_toEndOf="@+id/imagenPoi"
-        app:layout_constraintTop_toBottomOf="@+id/DescripcionUbica" />
+        app:layout_constraintTop_toBottomOf="@+id/DescripcionUbica"
+        tools:text="@string/categoryLabel" />
 
     <TextView
         android:id="@+id/puntuacionUbi"
         android:layout_width="402dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:textColor="#455A64"
+        android:textStyle="italic"
         app:layout_constraintStart_toEndOf="@+id/imagenPoi"
-        app:layout_constraintTop_toBottomOf="@+id/nombreCat" />
+        app:layout_constraintTop_toBottomOf="@+id/nombreCat"
+        tools:text="@string/punctuationLabel" />
 
     <Button
         android:id="@+id/botonGoogle"

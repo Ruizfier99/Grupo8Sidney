@@ -1,44 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="170dp"
     android:orientation="horizontal">
+
     <ImageView
         android:id="@+id/ImagenUbi"
         android:layout_width="150dp"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="TODO"
+        tools:srcCompat="@tools:sample/avatars" />
     <LinearLayout
         android:id="@+id/tvLinearLay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
         <TextView
             android:id="@+id/tvNombrePoi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            />
+            android:textSize="16sp"
+            tools:text="Name of the POI" />
+
         <TextView
             android:id="@+id/descripcionUbicacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="italic"
-            android:textSize="13dp"
+            android:textSize="14sp"
+            tools:text="Description of the POI that it's been showing in the moment." />
 
-            />
         <TextView
             android:id="@+id/nombreCategoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="italic"
-            />
+            android:textSize="14sp"
+            tools:text="POI's category" />
+
         <TextView
             android:id="@+id/puntuacionUbicacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="italic"
-            />
+            android:textSize="14sp"
+            tools:text="Punctuation" />
     </LinearLayout>
 
 </LinearLayout>
