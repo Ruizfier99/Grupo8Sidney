@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/fragmentInicio">
 
     <fragment
         android:id="@+id/settingsFragment"
@@ -31,6 +31,15 @@
         android:label="FragmentVista" >
         <action
             android:id="@+id/action_fragmentVista_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentInicio"
+        android:name="com.example.grupo8sidney.FragmentInicio"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_fragmentInicio_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
