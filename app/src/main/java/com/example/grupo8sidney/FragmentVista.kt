@@ -59,7 +59,7 @@ class FragmentVista : Fragment() {
         binding.botonGoogle.setOnClickListener {
 
 
-            val gmmIntentUri = Uri.parse("geo:" + latitudPoi + "," + longitudPoi)
+            val gmmIntentUri = Uri.parse("geo:0,0?q=" + latitudPoi + ", " + longitudPoi+"(punto)")
 
 
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
@@ -68,7 +68,6 @@ class FragmentVista : Fragment() {
 
             startActivity(mapIntent)
         }
-
 
 
     }
