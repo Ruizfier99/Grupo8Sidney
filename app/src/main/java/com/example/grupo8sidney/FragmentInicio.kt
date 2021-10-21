@@ -17,14 +17,18 @@ class FragmentInicio : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Infla la vista para el fragmento fragment_inicio usando DataBinding
         _binding = FragmentInicioBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /*
+        Asigna un clickListener al boton de "mostrar ubicaciones" para redireccionar
+        a la lista de puntos de interés
+         */
         binding.listaPOI.setOnClickListener{
             findNavController().navigate(R.id.action_fragmentInicio_to_homeFragment)
         }

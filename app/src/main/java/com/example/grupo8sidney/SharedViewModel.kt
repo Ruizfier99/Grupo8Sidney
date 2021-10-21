@@ -8,7 +8,10 @@ import retrofit2.Call
 import retrofit2.Callback
 
 class SharedViewModel : ViewModel() {
-    val selected= MutableLiveData<UbicacionPOI>()
+    // La variable selected guarda la información del punto de interés seleccionado en la lista
+    val selected = MutableLiveData<UbicacionPOI>()
+
+    // Función que guarda la información del POI en la variable selected
     fun select(ubicacionPoi:UbicacionPOI){
         selected.value = ubicacionPoi
     }

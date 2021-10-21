@@ -2,6 +2,7 @@ package com.example.grupo8sidney
 
 import com.google.gson.annotations.SerializedName
 
+// Data Class utilizada para gestionar la información de los puntos de interes
 data class UbicacionPOI(
     @SerializedName("nombrePoi")
     val nombrePoi:String,

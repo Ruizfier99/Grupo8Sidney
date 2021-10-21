@@ -23,7 +23,7 @@ class FragmentVista : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Infla la vista para el fragmento fragment_vista usando DataBinding
         _binding = FragmentVistaBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -32,6 +32,11 @@ class FragmentVista : Fragment() {
 
         var longitudPoi = ""
         var latitudPoi = ""
+
+        /*
+        Trae la información del objeto seleccionado en la lista utilizando el observer
+        y realiza la asignación de dicha información a los campos correspondientes
+         */
         model.selected.observe(viewLifecycleOwner, Observer<UbicacionPOI> { ubicacionPOI ->
             binding.tituloPoi.text = ubicacionPOI.nombrePoi
             binding.DescripcionUbica.text = ubicacionPOI.descripcion
@@ -43,6 +48,10 @@ class FragmentVista : Fragment() {
             latitudPoi = ubicacionPOI.latitud
         })
 
+        /*
+        Asigna un clickListener al boton de "ubicación googlemaps" para redireccionar
+        al intent de Google Maps utilizando los valores de longitud y latitud obtenidos
+         */
         binding.botonGoogle.setOnClickListener {
             val gmmIntentUri = Uri.parse("geo:0,0?q=" + latitudPoi + ", " + longitudPoi+"(punto)")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
